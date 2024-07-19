@@ -133,6 +133,34 @@ p{
     box-shadow: 0 .3rem 5rem grey;
 }
 
+form{
+background-color: lightsteelblue;
+display: flex;
+flex-direction: column;
+padding: 50px;
+width: 420px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+text-align: center;
+}
+form h2{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 35px;
 
+}
 
+input{
+    padding: 17px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 2px solid white;
+    margin-bottom: 30px;
+    outline: none;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+::placeholder{
+    color: white;
+}
 
