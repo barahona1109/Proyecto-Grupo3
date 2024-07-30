@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -6,10 +6,13 @@
     vertical-align: baseline;
 }
 
-body{
+body {
+    margin: 0;
+    padding: 0;
     text-align: center;
     font-family: sans-serif;
-    background-color: rgb(255, 255, 255);
+    background: url(../img/inicio2.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 
 
@@ -17,7 +20,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 63px;
+    height: 80px;
     background-color: rgb(195, 144, 68);
     position: fixed;
     width: 100%;
@@ -29,15 +32,18 @@ body{
     margin-right: 10px;
 }
 
-.logo{
+.logo {
     margin-left: 30px;
 }
-.logo{
+
+.logo a {
     text-decoration: none;
-    color:aliceblue;
+    color: aliceblue;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bold;
 }
+
 .navbar a {
     display: block;
     padding: 23px 20px;
@@ -51,19 +57,16 @@ body{
     background: rgb(212, 203, 174);
 
 }
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh !important;
-    background: url(../img/inicio.jpg) no-repeat center;
-    background-size: cover;
+
+.main-container {
+    padding: 20px;
+    background: white;
+    margin: 100px auto 40px;
+    border-radius: 20px;
+    max-width: 1200px;
+    z-index: 1;
+    position: relative;
 }
 
 .title {
@@ -74,10 +77,10 @@ body{
     color: rgb(0, 0, 0);
 }
 
-p{
-   margin-bottom: 40px;
-   font-size: 18px;
-   color: rgb(0, 0, 0);
+p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
 
 }
 
@@ -91,44 +94,44 @@ p{
     color: aliceblue;
     text-shadow: 1rem;
     justify-content: space-between;
-    
+
 }
 
 .btn:hover {
     background: none;
 }
 
- .btn-home {
+.btn-home {
     display: flex;
     border-radius: 1rem;
- }
+}
 
- .btn-home a {
+.btn-home a {
     margin: 0 10 px;
- }
+}
 
- .content {
+.content {
     height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 200px;
- }
+}
 
- .sau{
+.sau {
     padding: 30px;
-   
-    
- }
 
- .box-container {
+
+}
+
+.box-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
 
- }
+}
 
 .box-container .box {
     text-align: center;
@@ -136,52 +139,55 @@ p{
     box-shadow: 0 .3rem 5rem grey;
 }
 
-form{
-background-color: lightsteelblue;
-display: flex;
-flex-direction: column;
-padding: 50px;
-width: 420px;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-text-align: center;
+form {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 420px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 80px auto;
+    border-radius: 15px;
 }
-form h2{
+
+form h3 {
     font-size: 30px;
-    color: white;
+    color: rgb(57, 95, 11);
     margin-bottom: 35px;
 
 }
 
-input{
+input {
     padding: 17px;
     border-radius: 25px;
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid rgb(57, 95, 11);
     margin-bottom: 30px;
     outline: none;
-    color: #FFFFFF;
-    font-size: 16px;
+    color: rgb(57, 95, 11);
+    font-size: 18px;
 }
 
-::placeholder{
+::placeholder {
+    color: rgb(137, 141, 131);
+}
+
+footer {
+    margin-top: 20px 0;
+    padding: 20px;
+    background-color: #6e7d2d;
     color: white;
 }
 
-footer{
-    margin-top: 20px 0;
-    padding: 10px;
-    background-color: #6e7d2d;
-    color:white;
-}
-
-.footer-content{
-    display:flex;
+.footer-content {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.footer-content p{
+.footer-content p {
     margin: 0;
     font-size: 18px;
 }
@@ -198,34 +204,34 @@ footer{
 }
 
 .producto-gal {
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    padding-top:20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
 }
 
-.producto-gal figure{
-    margin:0;
+.producto-gal figure {
+    margin: 0;
     text-align: center;
 }
 
-.producto-gal figcaption{
-    color:white;
-    font-size:24px;
-    margin-top:10px;
+.producto-gal figcaption {
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
 
 }
 
-.background-section{
+.background-section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height:70vh;
-    position:relative;
+    height: 70vh;
+    position: relative;
 }
 
-.trend-title{
-    color:white;
+.trend-title {
+    color: white;
     font-size: 2rem;
     margin-bottom: 20px;
 }
