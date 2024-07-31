@@ -5,8 +5,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: sans-serif;
     background: url(../img/inicio2.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -59,20 +57,20 @@ body {
 .main-container {
     padding: 20px;
     background: white;
-    margin: 100px auto 40px;
+    margin: 120px auto 40px;
     border-radius: 20px;
     max-width: 1200px;
     display:flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 80vh;
+    align-items: center;
 }
 
 .title {
+    margin-top:15px;
     margin-bottom: 40px;
-    font-size: 60px;
-    font-weight: 200;
+    font-size: 3rem;
+    font-weight: 300px;
     text-transform: uppercase;
     color: rgb(0, 0, 0);
 }
@@ -275,18 +273,22 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     background-color: #fff;
-    margin: 0 auto;
+    height: 30rem;
+    
 }
 
 .product-card img{
-    width:100%;
-    height: auto;
+    width:90%;
+    height: 50%;
     object-fit: cover;
     max-height: 400px;
 }
 
 .product-card .card-body{
     padding: 15px;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .product-card h3{
