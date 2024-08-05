@@ -335,3 +335,36 @@ footer {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+
+.login-section {
+    text-align: center;
+}
+
+
+.login-section .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-section .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.login-links {
+    margin-top: 3px;
+}
+
+.login-links a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}

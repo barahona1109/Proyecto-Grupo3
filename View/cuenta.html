@@ -18,25 +18,24 @@
         </div>
         <nav class="navbar">
             <a href="index.html">Inicio</a>
-            <a href="productos.html">Carrito</a>
-            <a href="registro.html">Cuenta</a>
-            <a href="#about">Nosotros</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="cuenta.html">Cuenta</a>
             <a href="contacto.html">Contacto</a>
         </nav>
     </div>
     <br>
-            
-        <div class="main-container">
-        <section>
-            <h2 class="title">Crea tu cuenta</h2>
+    <div class="main-container">
+        <section class="login-section">
+            <h2 class="title">Iniciar Sesión</h2>
             <form>
-                <h3>Registro</h3>
-                <input type="text" placeholder="Usuario">
-                <input type="email" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
-                <input type="password" placeholder="Confirmar Contraseña">
-                <input type="submit" placeholder="Enviar">
+                <input type="text" placeholder="Usuario" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
             </form>
+            <div class="login-links">
+                <a href="registro.html">Registrarse</a>
+                <a href="contraseña.html">Olvidé contraseña</a>
+            </div>
         </section>
     </div>
 </body>
