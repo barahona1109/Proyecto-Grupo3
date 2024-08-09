@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 -- Database: `tienda_luce`
 --
 
+CREATE Database tienda_luce;
+use tienda_luce;
 -- --------------------------------------------------------
 
 --
@@ -218,6 +220,18 @@ ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`ID_Producto`) REFERENCES `inventario` (`ID_Producto`),
   ADD CONSTRAINT `ventas_ibfk_3` FOREIGN KEY (`Num_Cedula`) REFERENCES `cliente` (`Num_Cedula`);
 COMMIT;
+
+
+--
+--Insert products to table 'Inventario'
+
+INSERT INTO Inventario (ID_Producto, Descripcion, Precio, Estado, Cant_Disponible)
+VALUES 
+(1, '', 7500, 'Usado', 1),
+(2, '', 6900, 'Usado', 1),
+(3, '', 349.99, 'Usado', 2),
+(4, '', 12000, 'Nuevo', 2),
+(5, '', 9500, 'Nuevo', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
