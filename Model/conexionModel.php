@@ -1,28 +1,27 @@
-<?php 
-
+<?php
 class conexionModel {
 
-    /*
-    Funcion que me permite realizar insercciones a mi BD
-    */
-
-    public static function execute($scritpSQL) {
+    public static function execute($query, $params = []) {
         try {
-            
-            //Cadena de Conexión a la BD
             $conexion = mysqli_connect(
                 'localhost',
                 'root',
                 '',
-                'luce'
-            ) or die ('No se puede conectar a la DB');
+                'tienda_luce2'
+            ) or die('No se puede conectar a la DB');
 
-            //Ejecución de Scripts a la BD
-            $script = mysqli_query($conexion,$scritpSQL);
+            $stmt = $conexion->prepare($query);
+            
+            if ($params) {
+                $types = str_repeat('s', count($params));
+                $stmt->bind_param($types, ...$params);
+            }
+            
+            $stmt->execute();
             
             $resultado = array(
-                'exito' => $script,
-                'error' => mysqli_error($conexion),
+                'exito' => $stmt->get_result(),
+                'error' => $stmt->error,
                 'conexion' => $conexion
             );
 
@@ -30,29 +29,30 @@ class conexionModel {
 
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
+            return array('exito' => false, 'error' => $e->getMessage(), 'conexion' => null);
         }
     }
 
-    public static function get_data($scritpSQL) {
+    public static function get_data($query, $params = []) {
         try {
-            
-            $resultado = self::execute($scritpSQL);
+            $resultado = self::execute($query, $params);
             $filas = array();
 
-            if ($resultado['exito']) {
-
-                while($fila = mysqli_fetch_array($resultado['exito'], MYSQLI_ASSOC)) {
+            if ($resultado['exito'] instanceof mysqli_result) {
+                while ($fila = mysqli_fetch_array($resultado['exito'], MYSQLI_ASSOC)) {
                     $filas[] = $fila;
                 }
-
-                self::desconectar($resultado['conexion'], $resultado['exito']);
-
+            } else {
+                echo "Error en la consulta: " . $resultado['error'];
             }
+
+            self::desconectar($resultado['conexion'], $resultado['exito']);
 
             return $filas;
 
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
+            return array(); 
         }
     }
 
@@ -66,7 +66,5 @@ class conexionModel {
             echo "Error: " . $e->getMessage();
         }
     }
-
 }
-
 ?>
