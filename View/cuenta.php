@@ -1,3 +1,20 @@
+<?php
+require_once("../Controller/loginController.php");
+
+if(isset($_GET['action'])){
+
+    switch($_GET['action']){
+
+        case 'login':
+            loginController::inicioSesion($_POST);
+            break;
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +44,9 @@
     <div class="main-container">
         <section class="login-section">
             <h2 class="title">Iniciar Sesión</h2>
-            <form>
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
+            <form action = "../View/cuenta.php?action=login"method="post">
+                <input type="text" placeholder="Usuario" required name="username">
+                <input type="password" placeholder="Contraseña" required name= "password">
                 <button type="submit" class="btn btn-primary">Ingresar</button>
             </form>
             <div class="login-links">

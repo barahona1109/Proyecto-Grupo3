@@ -1,0 +1,61 @@
+body {
+    font-family: sans-serif;
+    background: url(../img/inicioAdmin.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#barranav {
+    background-color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul .nav-item {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: black;
+    font-style: bold;
+
+}
+
+.navbar-brand {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-style: bold;
+}
+
+.nav-item-Cerrar {
+    padding-left: 105pc;
+}
+
+div .titulo {
+    margin-top: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-self: center;
+    padding-left: 5100%;
+
+}
+
+#title_seccion {
+    background-color: black;
+    background-size: auto;
+    color: aliceblue;
+    align-content: center;
+    border-style: ridge;
+
+
+}
+
+.card-container {
+    margin-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    color: red; /* Cambia el color del texto "Home" */
+}
+.nav-link-cerrar {
+    color: red; /* Cambia el color del icono del botón de navegación */
+}
