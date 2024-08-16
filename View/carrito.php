@@ -1,7 +1,8 @@
 <?php
-include_once '../Model/conexionModel.php'; 
-function obtenerProductosCarrito() {
-    $query = "SELECT c.id_producto, p.nombre, p.descripcion, p.precio, c.cantidad
+include_once '../Model/conexionModel.php';
+function obtenerProductosCarrito()
+{
+    $query = "SELECT c.id_producto, p.nombre, p.descripcion, p.precio, p.imagen, c.cantidad
               FROM carrito c
               INNER JOIN productos p ON c.id_producto = p.ID_Producto";
     $resultado = conexionModel::get_data($query);
@@ -9,6 +10,15 @@ function obtenerProductosCarrito() {
 }
 
 $productosCarrito = obtenerProductosCarrito();
+
+$subtotal = 0;
+foreach ($productosCarrito as $producto) {
+    $subtotal += $producto['precio'] * $producto['cantidad'];
+}
+
+$envio = 2500;
+$total = $subtotal + $envio;
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +62,7 @@ $productosCarrito = obtenerProductosCarrito();
                         <div class="row">
                             <div class="col-lg-7">
                                 <h5 class="mb-3"><a href="index.html" class="text-body"><i
-                                        class="fas fa-long-arrow-alt-left me-2"></i>Seguir Comprando</a></h5>
+                                            class="fas fa-long-arrow-alt-left me-2"></i>Seguir Comprando</a></h5>
                                 <hr>
                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                     <div>
@@ -66,8 +76,8 @@ $productosCarrito = obtenerProductosCarrito();
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                            <img src="img/abrigo1.jpg" class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                                        <div>
+                                                        <img src="../img/<?php echo htmlspecialchars($producto['imagen']); ?>" class="img-fluid rounded-3" alt="<?php echo htmlspecialchars($producto['nombre']); ?>" style="width: 65px;">
                                                         </div>
                                                         <div class="ms-3">
                                                             <h5><?php echo htmlspecialchars($producto['nombre']); ?></h5>
@@ -82,7 +92,7 @@ $productosCarrito = obtenerProductosCarrito();
                                                             <h5 class="mb-0">¢<?php echo number_format($producto['precio'], 2); ?></h5>
                                                         </div>
                                                         <a href="../eliminar_carrito.php?idProducto=<?php echo htmlspecialchars($producto['id_producto']); ?>" style="color: #cecece;">
-                                                        <i class="fas fa-trash-alt"></i>
+                                                            <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -98,22 +108,22 @@ $productosCarrito = obtenerProductosCarrito();
                                 <hr class="my-4">
                                 <div class="d-flex justify-content-between">
                                     <p class="mb-2">Subtotal</p>
-                                    <p class="mb-2">¢<!-- Aquí va el subtotal calculado --></p>
+                                    <p class="mb-2">¢<?php echo number_format($subtotal, 2); ?></p>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <p class="mb-2">Envío</p>
-                                    <p class="mb-2">¢2500</p>
+                                    <p class="mb-2">¢<?php echo number_format($envio, 2); ?></p>
                                 </div>
                                 <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-2">Total(IVA incluido)</p>
-                                    <p class="mb-2">¢<!-- Aquí va el total calculado --></p>
+                                    <p class="mb-2">Total (IVA incluido)</p>
+                                    <p class="mb-2">¢<?php echo number_format($total, 2); ?></p>
                                 </div>
-                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-block btn-lg">
+                                <button type="button" class="btn btn-info btn-block btn-lg">
                                     <div class="d-flex justify-content-between">
-                                        <span>¢<!-- Aquí va el total calculado --></span>
                                         <span>Pagar <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                                     </div>
                                 </button>
+
                             </div>
                         </div>
                     </div>
@@ -128,4 +138,5 @@ $productosCarrito = obtenerProductosCarrito();
         <p class="lead text-center" style="color:white;">&copy; 2024 LUCE. Todos los derechos reservados</p>
     </div>
 </footer>
+
 </html>
