@@ -21,12 +21,12 @@ $productos = obtenerProductos($categoria);
         <body>
     <div class="head">
         <nav class="logo">
-            <a href="index.html">LUCE</a>
+            <a href="index.php">LUCE</a>
         </nav>
         <nav class="navbar">
-            <a href="index.html">Inicio</a>
+            <a href="index.php">Inicio</a>
             <a href="carrito.php">Carrito</a>
-            <a href="cuenta.html">Cuenta</a>
+            <a href="cuenta.php">Cuenta</a>
             <a href="contacto.html">Contacto</a>
         </nav>
     </div>
