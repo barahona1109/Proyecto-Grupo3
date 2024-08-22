@@ -9,6 +9,26 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+#hometitle{
+    color: red;
+}
+
+#title{
+    color: black;
+    background-color: red;
+    font-style: bold;
+}
+
+#titleInputs{
+    background-color: black;
+    color: white;
+}
+
+#tabla{
+    background-color: red;
+}
+
+
 ul .nav-item {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
