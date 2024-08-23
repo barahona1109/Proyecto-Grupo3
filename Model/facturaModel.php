@@ -31,7 +31,7 @@ class facturasModel
             $sql = "'" . $data['nombre'] . "'" . ",'" . $data['primerApellido'] . "'" . ",'" . $data['segundoApellido'] . "'" . ",'" . $data['cedula'] . "'";
             $resultado = conexionModel::execute("call InsertarFactura($sql)");
             if ($resultado) {
-                $sql = 'CALL LeerFacturas';
+                $sql = 'CALL LeerFactura';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {
@@ -49,9 +49,9 @@ class facturasModel
     {
         try {
             $sql = $id;
-            $resultado = conexionModel::execute("call EliminarFacturas($id)");
+            $resultado = conexionModel::execute("call EliminarFactura($id)");
             if ($resultado) {
-                $sql = 'CALL LeerFacturas';
+                $sql = 'CALL LeerFactura';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {

@@ -6,7 +6,7 @@
 
         public static function ver_traer_FacturaID($id){
             try {
-                return empleadoModel::traerfacturasid($id);
+                return facturaModel::traerfacturasid($id);
                 
             } catch (Exception $e) {   
                 echo "Error: ". $e->getMessage();
@@ -15,7 +15,7 @@
 
         public static function ver_traer_Facturas(){
             try {
-                return facturasModel::traerFacturas();
+                return facturaModel::traerFacturas();
                 
             } catch (\Exception $e) {   
                 echo "Error: ". $e->getMessage();
@@ -24,7 +24,7 @@
 
         public static function insertar_Facturas($data){
             try {
-                return facturasModel::insertarFacturas($data);
+                return facturaModel::insertarFacturas($data);
                 
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
@@ -33,7 +33,7 @@
 
         public static function eliminar_Facturas($id){
             try {
-                return facturasModel::eliminarFacturas($id);
+                return facturaModel::eliminarFacturas($id);
                 
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
@@ -43,7 +43,7 @@
         
         public static function modificarEmpleados($data){
             try {
-                return facturasModel::modificarEmpleados($data);
+                return facturaModel::modificarEmpleados($data);
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
             }
