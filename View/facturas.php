@@ -1,7 +1,7 @@
 <?php
 require_once('../Controller/facturaController.php');
 
-$verFacturas = facturaController::ver_traer_Facturas s();
+$verFacturas = facturaController::ver_traer_Facturas();
 $verFacturaID = [];
 
 // Verificar si se ha pasado la acción a realizar
