@@ -1,7 +1,7 @@
 <?php
 require_once('../Model/conexionModel.php');
 
-class facturasModel
+class facturaModel
 {
     public static function traerFacturas()
     {
@@ -28,10 +28,10 @@ class facturasModel
     public static function insertarFacturas($data)
     {
         try {
-            $sql = "'" . $data['nombre'] . "'" . ",'" . $data['primerApellido'] . "'" . ",'" . $data['segundoApellido'] . "'" . ",'" . $data['cedula'] . "'";
-            $resultado = conexionModel::execute("call InsertarFactura($sql)");
+            $sql = $data['idfactura'] . ", " . $data['Num_Factura'] . ", '" . $data['Num_Cedula'] . "', " . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", " . $data['Costo_Envio'] . ", " . $data['Total_factura'];
+            $resultado = conexionModel::execute("CALL ModificarFactura($sql)");
             if ($resultado) {
-                $sql = 'CALL LeerFactura';
+                $sql = 'CALL LeerFacturas';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {
@@ -51,7 +51,7 @@ class facturasModel
             $sql = $id;
             $resultado = conexionModel::execute("call EliminarFactura($id)");
             if ($resultado) {
-                $sql = 'CALL LeerFactura';
+                $sql = 'CALL LeerFacturas';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {
@@ -66,10 +66,12 @@ class facturasModel
     public static function modificarFacturas($data)
     {
         try {
-            $sql =  $data['id'] .",'" . $data['nombre'] . "'" . ",'" . $data['primerApellido'] . "'" . ",'" . $data['segundoApellido'] . "'" . ",'" . $data['cedula']. "'";
-            $resultado = conexionModel::execute("call ModificarFactura($sql)");
+            $sql = $data['idfactura'] . ", " . $data['Num_Factura'] . ", '" . $data['Num_Cedula'] . "', " 
+            . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", " . $data['Costo_Envio'] . ", " 
+            . $data['Total_factura'];
+            $resultado = conexionModel::execute("CALL ModificarFactura($sql)");
             if ($resultado) {
-                $sql = 'CALL LeerFactura';
+                $sql = 'CALL LeerFacturas';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {

@@ -1,9 +1,9 @@
 <?php
 require_once('../Model/conexionModel.php');
 
-class ventasModel
+class ventaModel
 {
-    public static function traerVentas()
+    public static function traerVenta()
     {
         try {
             $sql = 'CALL LeerVentas';
@@ -14,7 +14,7 @@ class ventasModel
         }
     }
 
-    public static function traerVentasid($id)
+    public static function traerVentaid($id)
     {
         try {
             $sql = "CALL VerVentasPorID ($id)";
@@ -25,13 +25,13 @@ class ventasModel
         }
     }
 
-    public static function insertarVentas($data)
+    public static function insertarVenta($data)
     {
         try {
-            $sql = "'" . $data['nombre'] . "'" . ",'" . $data['primerApellido'] . "'" . ",'" . $data['segundoApellido'] . "'" . ",'" . $data['cedula'] . "'";
-            $resultado = conexionModel::execute("call InsertarVenta($sql)");
+            $sql = $data['ID_Venta'] . ", " . $data['id_factura'] . ", " . $data['ID_Producto'] . ", " . $data['Cantidad'] . ", " . $data['Total'] . ", '" . $data['Fecha_Venta'] . "'";
+        $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
             if ($resultado) {
-                $sql = 'CALL LeerVenta';
+                $sql = 'CALL LeerVentas';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {
@@ -45,13 +45,13 @@ class ventasModel
 
     }
 
-    public static function eliminarVentas($id)
+    public static function eliminarVenta($id)
     {
         try {
             $sql = $id;
             $resultado = conexionModel::execute("call EliminarVenta($id)");
             if ($resultado) {
-                $sql = 'CALL LeerVenta';
+                $sql = 'CALL LeerVentas';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {
@@ -63,13 +63,13 @@ class ventasModel
         }
     }
 
-    public static function modificarVentas($data)
+    public static function modificarVenta($data)
     {
         try {
-            $sql =  $data['id'] .",'" . $data['nombre'] . "'" . ",'" . $data['primerApellido'] . "'" . ",'" . $data['segundoApellido'] . "'" . ",'" . $data['cedula']. "'";
-            $resultado = conexionModel::execute("call ModificarVenta($sql)");
+            $sql = $data['ID_Venta'] . ", " . $data['id_factura'] . ", " . $data['ID_Producto'] . ", " . $data['Cantidad'] . ", " . $data['Total'] . ", '" . $data['Fecha_Venta'] . "'";
+        $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
             if ($resultado) {
-                $sql = 'CALL LeerVenta';
+                $sql = 'CALL LeerVentas';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {

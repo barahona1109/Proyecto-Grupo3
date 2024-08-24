@@ -2,11 +2,11 @@
 
     require_once('../Model/ventaModel.php');
 
-    class ventasController{
+    class ventaController{
 
         public static function ver_traer_VentaID($id){
             try {
-                return ventaModel::traerventasid($id);
+                return ventaModel::traerventaid($id);
                 
             } catch (Exception $e) {   
                 echo "Error: ". $e->getMessage();
@@ -15,7 +15,7 @@
 
         public static function ver_traer_Ventas(){
             try {
-                return ventaModel::traerVentas();
+                return ventaModel::traerVenta();
                 
             } catch (\Exception $e) {   
                 echo "Error: ". $e->getMessage();

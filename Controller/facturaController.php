@@ -2,7 +2,7 @@
 
     require_once('../Model/facturaModel.php');
 
-    class facturasController{
+    class facturaController{
 
         public static function ver_traer_FacturaID($id){
             try {
@@ -24,7 +24,7 @@
 
         public static function insertar_Factura($data){
             try {
-                return facturaModel::insertarFactura($data);
+                return facturaModel::insertarFacturas($data);
                 
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
@@ -33,7 +33,7 @@
 
         public static function eliminar_Factura($id){
             try {
-                return facturaModel::eliminarFactura($id);
+                return facturaModel::eliminarFacturas($id);
                 
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
@@ -43,7 +43,7 @@
         
         public static function modificarFactura($data){
             try {
-                return facturaModel::modificarFactura($data);
+                return facturaModel::modificarFacturas($data);
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
             }

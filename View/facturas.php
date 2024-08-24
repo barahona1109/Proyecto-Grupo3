@@ -11,11 +11,11 @@ if (isset($_GET['action'])) {
 
     switch ($action) {
         case 'insertar':
-            facturaController::insertar_Facturas($_POST);
+            facturaController::insertar_Factura($_POST);
             header("Location: ../View/facturas.php?mensaje=Factura insertar correctamente");
             exit();
         case "modificar":
-            $modificarFactura = facturaController::modificarFacturas($_POST);
+            $modificarFactura = facturaController::modificarFactura($_POST);
             header("Location: ../View/facturas.php?mensaje=Factura modificado correctamente");
 
             exit();
@@ -23,7 +23,7 @@ if (isset($_GET['action'])) {
 
         case 'eliminar':
             if ($id) {
-                $eliminarFactura = facturaController::eliminar_Facturas($id);
+                $eliminarFactura = facturaController::eliminar_Factura($id);
 
                 if ($eliminarFactura) {
                     header("Location: ../View/facturas.php?mensaje=Factura eliminado correctamente");
@@ -37,7 +37,7 @@ if (isset($_GET['action'])) {
 
         case 'ver':
             if ($id) {
-                $verFacturaID = facturaController::ver_traer_FacturasID($id);
+                $verFacturaID = facturaController::ver_traer_FacturaID($id);
 
                 if (!$verFacturaID) {
                     echo "Error al traer la factura.";

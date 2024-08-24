@@ -1,7 +1,7 @@
 <?php
 require_once('../Controller/ventaController.php');
 
-$verVentas = ventaController::ver_traer_Ventas();
+$verVentas = ventaController::ver_traer_Venta();
 $verVentaID = [];
 
 // Verificar si se ha pasado la acción a realizar
@@ -11,22 +11,22 @@ if (isset($_GET['action'])) {
 
     switch ($action) {
         case 'insertar':
-            ventaController::insertar_Ventas($_POST);
-            header("Location: ../View/ventas.php?mensaje=Venta insertado correctamente");
+            ventaController::insertar_Venta($_POST);
+            header("Location: ../View/venta.php?mensaje=Venta insertado correctamente");
             exit();
         case "modificar":
-            $modificarVenta = ventaController::modificarVentas($_POST);
-            header("Location: ../View/ventas.php?mensaje=Venta modificado correctamente");
+            $modificarVenta = ventaController::modificarVenta($_POST);
+            header("Location: ../View/venta.php?mensaje=Venta modificado correctamente");
 
             exit();
 
 
         case 'eliminar':
             if ($id) {
-                $eliminarVenta = ventaController::eliminar_Ventas($id);
+                $eliminarVenta = ventaController::eliminar_Venta($id);
 
                 if ($eliminarVenta) {
-                    header("Location: ../View/ventas.php?mensaje=Venta eliminado correctamente");
+                    header("Location: ../View/venta.php?mensaje=Venta eliminado correctamente");
                 } else {
                     echo "Error al eliminar la venta.";
                 }
@@ -89,7 +89,7 @@ if (isset($_GET['action'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="searchForm" action="../View/ventas.php?action=modificar" method="post">
+                    <form id="searchForm" action="../View/venta.php?action=modificar" method="post">
                         <div class="mb-3">
                             <?php if (!empty($verVentaID)): ?>
                                 <?php foreach ($verVentaID as $venta): ?>
@@ -181,7 +181,7 @@ if (isset($_GET['action'])) {
                             <td>
                                 <a href="../View/ventas.php?action=ver&id=<?= $venta['ID_Venta'] ?>"
                                     class="btn btn-small btn-danger"><i class="fa-solid fa-floppy-disk"></i></a>
-                                <a href="../View/ventas.php?action=eliminar&id=<?= $venta['ID_Venta'] ?>"
+                                <a href="../View/venta.php?action=eliminar&id=<?= $venta['ID_Venta'] ?>"
                                     class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
