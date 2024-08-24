@@ -1,39 +1,39 @@
 <?php   
 
-    require_once('../Model/facturaModel.php');
+    require_once('../Model/ventaModel.php');
 
-    class facturasController{
+    class ventasController{
 
-        public static function ver_traer_FacturaID($id){
+        public static function ver_traer_VentaID($id){
             try {
-                return facturaModel::traerfacturasid($id);
+                return ventaModel::traerventasid($id);
                 
             } catch (Exception $e) {   
                 echo "Error: ". $e->getMessage();
             }
         }
 
-        public static function ver_traer_Facturas(){
+        public static function ver_traer_Ventas(){
             try {
-                return facturaModel::traerFacturas();
+                return ventaModel::traerVentas();
                 
             } catch (\Exception $e) {   
                 echo "Error: ". $e->getMessage();
             }
         }
 
-        public static function insertar_Factura($data){
+        public static function insertar_Venta($data){
             try {
-                return facturaModel::insertarFactura($data);
+                return ventaModel::insertarVenta($data);
                 
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
             }
         }
 
-        public static function eliminar_Factura($id){
+        public static function eliminar_Venta($id){
             try {
-                return facturaModel::eliminarFactura($id);
+                return ventaModel::eliminarVenta($id);
                 
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
@@ -41,9 +41,9 @@
         }
 
         
-        public static function modificarFactura($data){
+        public static function modificarVenta($data){
             try {
-                return facturaModel::modificarFactura($data);
+                return ventaModel::modificarVenta($data);
             } catch (Exception $e) {
                 echo "Error: ". $e->getMessage();
             }

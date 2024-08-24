@@ -12,7 +12,7 @@ if (isset($_GET['action'])) {
     switch ($action) {
         case 'insertar':
             facturaController::insertar_Facturas($_POST);
-            header("Location: ../View/facturas.php?mensaje=Factura insertado correctamente");
+            header("Location: ../View/facturas.php?mensaje=Factura insertar correctamente");
             exit();
         case "modificar":
             $modificarFactura = facturaController::modificarFacturas($_POST);
