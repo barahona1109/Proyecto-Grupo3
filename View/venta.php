@@ -125,7 +125,7 @@ if (isset($_GET['action'])) {
 
     <h1 class="text-center p-3">Ventas</h1>
     <div class="container-fluid row">
-        <form action="../View/ventas.php?action=insertar" method="post" class="col-4 p-3">
+        <form action="../View/venta.php?action=insertar" method="post" class="col-4 p-3">
             <h4 id="title" class="text-center">Registro de Ventas</h4>
             <div class="mb-3">
                 <label id="titleInputs" for="id_factura" class="form-label">ID Factura</label>
@@ -179,7 +179,7 @@ if (isset($_GET['action'])) {
                             <td><input type="text" class="form-control" name="Fecha_Venta[]"
                                     value="<?= $venta['Fecha_Venta'] ?>"></td>
                             <td>
-                                <a href="../View/ventas.php?action=ver&id=<?= $venta['ID_Venta'] ?>"
+                                <a href="../View/venta.php?action=ver&id=<?= $venta['ID_Venta'] ?>"
                                     class="btn btn-small btn-danger"><i class="fa-solid fa-floppy-disk"></i></a>
                                 <a href="../View/venta.php?action=eliminar&id=<?= $venta['ID_Venta'] ?>"
                                     class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>

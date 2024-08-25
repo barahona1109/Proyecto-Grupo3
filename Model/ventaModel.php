@@ -6,7 +6,7 @@ class ventaModel
     public static function traerVenta()
     {
         try {
-            $sql = 'CALL LeerVentas';
+            $sql = 'CALL LeerVenta';
             $lista = conexionModel::get_Data($sql);
             return $lista;
         } catch (Exception $e) {
@@ -17,7 +17,7 @@ class ventaModel
     public static function traerVentaid($id)
     {
         try {
-            $sql = "CALL VerVentasPorID ($id)";
+            $sql = "CALL VerVentaPorID ($id)";
             $lista = conexionModel::get_Data($sql);
             return $lista;
         } catch (Exception $e) {
@@ -31,7 +31,7 @@ class ventaModel
             $sql = $data['ID_Venta'] . ", " . $data['id_factura'] . ", " . $data['ID_Producto'] . ", " . $data['Cantidad'] . ", " . $data['Total'] . ", '" . $data['Fecha_Venta'] . "'";
         $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
             if ($resultado) {
-                $sql = 'CALL LeerVentas';
+                $sql = 'CALL LeerVenta';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {
@@ -51,7 +51,7 @@ class ventaModel
             $sql = $id;
             $resultado = conexionModel::execute("call EliminarVenta($id)");
             if ($resultado) {
-                $sql = 'CALL LeerVentas';
+                $sql = 'CALL LeerVenta';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {
@@ -69,7 +69,7 @@ class ventaModel
             $sql = $data['ID_Venta'] . ", " . $data['id_factura'] . ", " . $data['ID_Producto'] . ", " . $data['Cantidad'] . ", " . $data['Total'] . ", '" . $data['Fecha_Venta'] . "'";
         $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
             if ($resultado) {
-                $sql = 'CALL LeerVentas';
+                $sql = 'CALL LeerVenta';
                 $lista = conexionModel::get_Data($sql);
                 return $lista;
             } else {

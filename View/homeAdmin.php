@@ -69,7 +69,7 @@ require_once("../Controller/loginController.php");
                             funcionamiento de la empresa.
                             Ademas, puede administrar las mismas.
                         </p>
-                        <a href="../View/ventas.php" class="btn btn-outline-danger"><i class="fa-solid fa-cubes"></i>Vamos!</i></a>
+                        <a href="../View/venta.php" class="btn btn-outline-danger"><i class="fa-solid fa-cubes"></i>Vamos!</i></a>
                     </div>
                 </div>
                 <div id="cardFacturas" class="container">
