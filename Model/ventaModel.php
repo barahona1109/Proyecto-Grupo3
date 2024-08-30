@@ -28,8 +28,8 @@ class ventaModel
     public static function insertarVenta($data)
     {
         try {
-            $sql = $data['ID_Venta'] . ", " . $data['id_factura'] . ", " . $data['ID_Producto'] . ", " . $data['Cantidad'] . ", " . $data['Total'] . ", '" . $data['Fecha_Venta'] . "'";
-        $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
+            $sql = $data['id_factura'] . ", " . $data['ID_Producto'] . ", " . $data['Cantidad'] . ", '" . $data['Total'] ."'". ", '" . $data['Fecha_Venta'] . "'";
+            $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
             if ($resultado) {
                 $sql = 'CALL LeerVenta';
                 $lista = conexionModel::get_Data($sql);
@@ -67,7 +67,7 @@ class ventaModel
     {
         try {
             $sql = $data['ID_Venta'] . ", " . $data['id_factura'] . ", " . $data['ID_Producto'] . ", " . $data['Cantidad'] . ", " . $data['Total'] . ", '" . $data['Fecha_Venta'] . "'";
-        $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
+            $resultado = conexionModel::execute("CALL InsertarVenta($sql)");
             if ($resultado) {
                 $sql = 'CALL LeerVenta';
                 $lista = conexionModel::get_Data($sql);

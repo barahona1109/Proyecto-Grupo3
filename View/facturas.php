@@ -74,7 +74,7 @@ if (isset($_GET['action'])) {
 
 <body>
     <div>
-        <nav id="barranav" class="navbar" >
+        <nav id="barranav" class="navbar">
             <div class="container-fluid">
                 <a id="hometitle" class="navbar-brand" href="../View/homeAdmin.php">Home</a>
             </div>
@@ -95,7 +95,7 @@ if (isset($_GET['action'])) {
                                 <?php foreach ($verFacturaID as $factura): ?>
                                     <label for="idfactura" class="form-label">ID de la factura</label>
                                     <input type="text" class="form-control" name="idfactura" required
-                                        value="<?= $factura['ID_Factura'] ?>">
+                                        value="<?= $factura['idfactura'] ?>">
                                     <label for="Num_Factura" class="form-label">Num_Factura</label>
                                     <input type="text" class="form-control" name="Num_Factura" required
                                         value="<?= $factura['Num_Factura'] ?>">
@@ -105,7 +105,7 @@ if (isset($_GET['action'])) {
                                     <label for="ID_Producto" class="form-label">ID_Producto</label>
                                     <input type="text" class="form-control" name="ID_Producto" required
                                         value="<?= $factura['ID_Producto'] ?>">
-                                        <label for="ID_Empleado" class="form-label">ID del Empleado</label>
+                                    <label for="ID_Empleado" class="form-label">ID del Empleado</label>
                                     <input type="text" class="form-control" name="ID_Empleado" required
                                         value="<?= $factura['ID_Empleado'] ?>">
                                     <label for="Costo_Envio" class="form-label">Costo de Envío</label>
@@ -160,7 +160,7 @@ if (isset($_GET['action'])) {
             <table class="table">
                 <thead id="tabla" class="bg-info">
                     <tr>
-                    <th scope="col">ID</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Número de Factura</th>
                         <th scope="col">Número de Cédula</th>
                         <th scope="col">ID del Producto</th>
@@ -173,20 +173,21 @@ if (isset($_GET['action'])) {
                 <tbody>
                     <?php foreach ($verFacturas as $factura): ?>
                         <tr>
-                        <td><input type="hidden" name="idfactura[]"
+                            <td><input type="hidden" name="id[]"
                                     value="<?= $factura['idfactura'] ?>"><?= $factura['idfactura'] ?>
                             </td>
-                            <td><input type="text" class="form-control" name="Num_Factura[]" value="<?= $factura['Num_Factura'] ?>">
+                            <td><input type="text" class="form-control" name="NumeroFactura[]" required
+                                    value="<?= $factura['Num_Factura'] ?>">
                             </td>
-                            <td><input type="text" class="form-control" name="Num_Cedula[]"
+                            <td><input type="text" class="form-control" name="NumeroCedula[]" required
                                     value="<?= $factura['Num_Cedula'] ?>"></td>
-                            <td><input type="text" class="form-control" name="ID_Producto[]"
+                            <td><input type="text" class="form-control" name="IdProducto[]" required
                                     value="<?= $factura['ID_Producto'] ?>"></td>
-                            <td><input type="text" class="form-control" name="ID_Empleado[]"
+                            <td><input type="text" class="form-control" name="IdEmpleado[]" required
                                     value="<?= $factura['ID_Empleado'] ?>"></td>
-                            <td><input type="text" class="form-control" name="Costo_Envio[]"
+                            <td><input type="text" class="form-control" name="CostoEnvio[]" required
                                     value="<?= $factura['Costo_Envio'] ?>"></td>
-                            <td><input type="text" class="form-control" name="Total_factura[]"
+                            <td><input type="text" class="form-control" name="Totalfactura[]" required
                                     value="<?= $factura['Total_factura'] ?>"></td>
                             <td>
                                 <a href="../View/facturas.php?action=ver&id=<?= $factura['idfactura'] ?>"

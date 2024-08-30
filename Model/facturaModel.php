@@ -28,8 +28,8 @@ class facturaModel
     public static function insertarFacturas($data)
     {
         try {
-            $sql = $data['idfactura'] . ", " . $data['Num_Factura'] . ", '" . $data['Num_Cedula'] . "', " . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", " . $data['Costo_Envio'] . ", " . $data['Total_factura'];
-            $resultado = conexionModel::execute("CALL ModificarFactura($sql)");
+            $sql =  $data['Num_Factura']. ", '" . $data['Num_Cedula'] ."'". ", " . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", '" . $data['Costo_Envio'] ."'". ", '" . $data['Total_factura']."'";
+            $resultado = conexionModel::execute("CALL InsertarFactura($sql)");
             if ($resultado) {
                 $sql = 'CALL LeerFacturas';
                 $lista = conexionModel::get_Data($sql);

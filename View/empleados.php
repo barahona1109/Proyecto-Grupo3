@@ -120,7 +120,7 @@ if (isset($_GET['action'])) {
         </div>
     </div>
 
-    <h1 class="text-center p-3">USUARIOS</h1>
+    <h1 class="text-center p-3">Empleados</h1>
     <div class="container-fluid row">
         <form action="../View/empleados.php?action=insertar" method="post" class="col-4 p-3">
             <h4 id="title" class="text-center">Registro de Empleados</h4>

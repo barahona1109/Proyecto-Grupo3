@@ -1,7 +1,7 @@
 <?php
 require_once('../Controller/ventaController.php');
 
-$verVentas = ventaController::ver_traer_Venta();
+$verVentas = ventaController::ver_traer_Ventas();
 $verVentaID = [];
 
 // Verificar si se ha pasado la acción a realizar
@@ -37,7 +37,7 @@ if (isset($_GET['action'])) {
 
         case 'ver':
             if ($id) {
-                $verVentaID = ventaController::ver_traer_VentasID($id);
+                $verVentaID = ventaController::ver_traer_VentaID($id);
 
                 if (!$verVentaID) {
                     echo "Error al traer la venta.";
@@ -128,23 +128,23 @@ if (isset($_GET['action'])) {
         <form action="../View/venta.php?action=insertar" method="post" class="col-4 p-3">
             <h4 id="title" class="text-center">Registro de Ventas</h4>
             <div class="mb-3">
-                <label id="titleInputs" for="id_factura" class="form-label">ID Factura</label>
+                <label id="titleInputs" for="exampleInputEmail1" class="form-label">ID Factura</label>
                 <input type="text" class="form-control" name="id_factura">
             </div>
             <div class="mb-3">
-                <label id="titleInputs" for="ID_Producto" class="form-label">ID Producto</label>
+                <label id="titleInputs" for="exampleInputEmail1" class="form-label">ID Producto</label>
                 <input type="text" class="form-control" name="ID_Producto">
             </div>
             <div class="mb-3">
-                <label id="titleInputs" for="Cantidad" class="form-label">Cantidad</label>
+                <label id="titleInputs" for="exampleInputEmail1" class="form-label">Cantidad</label>
                 <input type="text" class="form-control" name="Cantidad">
             </div>
             <div class="mb-3">
-                <label id="titleInputs" for="Total" class="form-label">Total</label>
+                <label id="titleInputs" for="exampleInputEmail1" class="form-label">Total</label>
                 <input type="text" class="form-control" name="Total">
             </div>
             <div class="mb-3">
-                <label id="titleInputs" for="Fecha_Venta" class="form-label">Fecha de Venta</label>
+                <label id="titleInputs" for="exampleInputEmail1" class="form-label">Fecha de Venta</label>
                 <input type="datetime-local" class="form-control" name="Fecha_Venta">
             </div>
             <button type="submit" class="btn btn-danger" name="Crear" value="Ok">Crear</button>
