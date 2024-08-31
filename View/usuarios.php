@@ -82,8 +82,7 @@ if (isset($_GET['action'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="modifyForm" action="../View/usuarios.php" method="post">
-                        <input type="hidden" name="action" value="modificar">
+                    <form id="modifyForm" action="../View/usuarios.php?action=modificar" method="post">
                         <input type="hidden" name="id" value="<?= htmlspecialchars(isset($verUsuarioID[0]['id']) ? $verUsuarioID[0]['id'] : '') ?>">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>

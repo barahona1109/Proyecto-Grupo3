@@ -28,7 +28,7 @@ class facturaModel
     public static function insertarFacturas($data)
     {
         try {
-            $sql =  $data['Num_Factura']. ", '" . $data['Num_Cedula'] ."'". ", " . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", '" . $data['Costo_Envio'] ."'". ", '" . $data['Total_factura']."'";
+            $sql = $data['Num_Factura'] . ", '" . $data['Num_Cedula'] . "'" . ", " . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", '" . $data['Costo_Envio'] . "'" . ", '" . $data['Total_factura'] . "'";
             $resultado = conexionModel::execute("CALL InsertarFactura($sql)");
             if ($resultado) {
                 $sql = 'CALL LeerFacturas';
@@ -66,9 +66,9 @@ class facturaModel
     public static function modificarFacturas($data)
     {
         try {
-            $sql = $data['idfactura'] . ", " . $data['Num_Factura'] . ", '" . $data['Num_Cedula'] . "', " 
-            . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", " . $data['Costo_Envio'] . ", " 
-            . $data['Total_factura'];
+            $sql = $data['idfactura'] . ", " . $data['Num_Factura'] . ", '" . $data['Num_Cedula'] . "', "
+                . $data['ID_Producto'] . ", " . $data['ID_Empleado'] . ", " . $data['Costo_Envio'] . ", "
+                . $data['Total_factura'];
             $resultado = conexionModel::execute("CALL ModificarFactura($sql)");
             if ($resultado) {
                 $sql = 'CALL LeerFacturas';

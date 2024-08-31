@@ -64,20 +64,8 @@ class usuarioModel
     public static function modificarUsuario($data)
 {
     try {
-        if (empty($data['id']) || empty($data['nombre']) || empty($data['usuario']) || empty($data['password']) || empty($data['id_cargo'])) {
-            throw new Exception('Datos incompletos para modificar el usuario.');
-        }
-
-        $sql = "CALL ModificarUsuario(?, ?, ?, ?, ?)";
-        $params = [
-            $data['id'],
-            $data['nombre'],
-            $data['usuario'],
-            $data['password'],
-            $data['id_cargo']
-        ];
-
-        $resultado = conexionModel::execute($sql, $params);
+        $sql = $data['id'] . ",'" . $data['nombre'] . "'".", '" . $data['usuario'] ."'". ",'" . $data['password'] ."'". ", " . $data['id_cargo'];
+            $resultado = conexionModel::execute("CALL modificar_usuario($sql)");
 
         if ($resultado) {
             $sql = 'CALL LeerUsuarios';
