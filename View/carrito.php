@@ -118,6 +118,7 @@ $total = $subtotal + $envio;
                                     <p class="mb-2">Total (IVA incluido)</p>
                                     <p class="mb-2">¢<?php echo number_format($total, 2); ?></p>
                                 </div>
+                                <button type="button" class="btn btn-warning">Pagar</button>
                                 
 
                             </div>

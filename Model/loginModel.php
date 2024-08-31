@@ -9,7 +9,7 @@
                 $password = $data['password'];
         
                 // Consulta SQL con placeholders para los parámetros
-                $consulta = "SELECT * FROM usuarios WHERE usuario = ? AND password = ?";
+                $consulta = "SELECT * FROM usuarios WHERE nombre = ? AND password = ?";
                 $params = [$username, $password];
         
                 // Ejecutar la consulta utilizando la función execute
@@ -32,8 +32,8 @@
                         }
                         exit(); // Asegurarse de que el script se detenga después de la redirección
                     } else {
-                        include("../View/cuenta.php");
-                        echo "<p>Error en la autenticación</p>";
+                        header("Location: ../View/cuenta.php?error=1");
+                        exit();
                     }
         
                     mysqli_free_result($resultado['exito']);

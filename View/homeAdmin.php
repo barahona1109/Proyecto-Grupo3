@@ -61,17 +61,6 @@ require_once("../Controller/loginController.php");
         <section id="seccion1">
             <h2 id="title_seccion">Posibles funcionalidades deseadas</h2>
             <div class="card">
-                <div id="cardVentas" class=container>
-                    <h5 class="card-header">Ventas</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Record de Ventas</h5>
-                        <p class="card-text">Aqui puede encontrar un resumen de las ventas realizadas a lo largo del
-                            funcionamiento de la empresa.
-                            Ademas, puede administrar las mismas.
-                        </p>
-                        <a href="../View/venta.php" class="btn btn-outline-danger"><i class="fa-solid fa-cubes"></i>Vamos!</i></a>
-                    </div>
-                </div>
                 <div id="cardFacturas" class="container">
                     <h5 class="card-header">Facturas</h5>
                     <div class="card-body">

@@ -48,8 +48,7 @@ if (isset($_GET['action'])) {
             <a href="contacto.html">Contacto</a>
 
             <?php if ($isLoggedIn): ?>
-                <div class="avisoInicio"><i class="fa-solid fa-user"></i><span class="navbar-text">Bienvenido,
-                        <?= htmlspecialchars($userName) ?>!</span></div>
+                <div class="avisoInicio"><i class="fa-solid fa-user"></i><span class="navbar-text">Bienvenido</span></div>
                 <a href="../View/index?action=cerrar" class="btncerrar">Cerrar sesión</a>
             <?php else: ?>
                 <a id="iniciarsesion" href="../View/cuenta.php" class="btniniciar">Iniciar sesión</a>
