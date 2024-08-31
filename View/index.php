@@ -45,7 +45,6 @@ if (isset($_GET['action'])) {
         <nav class="navbar">
             <a href="index.php">Inicio</a>
             <a href="carrito.php">Carrito</a>
-            <a href="cuenta.php">Cuenta</a>
             <a href="contacto.html">Contacto</a>
 
             <?php if ($isLoggedIn): ?>

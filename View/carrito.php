@@ -61,7 +61,7 @@ $total = $subtotal + $envio;
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-lg-7">
-                                <h5 class="mb-3"><a href="index.html" class="text-body"><i
+                                <h5 class="mb-3"><a href="index.php" class="text-body"><i
                                             class="fas fa-long-arrow-alt-left me-2"></i>Seguir Comprando</a></h5>
                                 <hr>
                                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -118,11 +118,7 @@ $total = $subtotal + $envio;
                                     <p class="mb-2">Total (IVA incluido)</p>
                                     <p class="mb-2">¢<?php echo number_format($total, 2); ?></p>
                                 </div>
-                                <button type="button" class="btn btn-info btn-block btn-lg">
-                                    <div class="d-flex justify-content-between">
-                                        <span>Pagar <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                                    </div>
-                                </button>
+                                
 
                             </div>
                         </div>
